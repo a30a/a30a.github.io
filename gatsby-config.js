@@ -21,7 +21,7 @@ module.exports = {
           },
           {
             title: `백대현`,
-            slug: `/about`,
+            slug: `/author`,
           },
         ]
       },
