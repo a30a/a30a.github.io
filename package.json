@@ -1,9 +1,8 @@
 {
   "private": true,
-  "name": "minimal-blog",
-  "description": "Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and line highlighting.",
-  "version": "1.0.10",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "name": "a30a",
+  "description": "Daehyun Paik's personal homepage.",
+  "author": "a30a <paik@a30a.dev>",
   "license": "MIT",
   "starter-name": "gatsby-starter-minimal-blog",
   "scripts": {
@@ -14,7 +13,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
     "@lekoarts/gatsby-theme-minimal-blog": "^2.2.4",

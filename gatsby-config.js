@@ -4,7 +4,11 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: `a30a`,
+    siteTitleAlt: `a30a`,
+    siteUrl: `https://a30a.dev`,
+    siteDescription: `Daehyun Paik's personal homepage.`,
+    siteLanguage: `kr`
   },
   plugins: [
     {
@@ -12,24 +16,14 @@ module.exports = {
       options: {
         navigation: [
           {
-            title: `Blog`,
+            title: `블로그`,
             slug: `/blog`,
           },
           {
-            title: `About`,
+            title: `백대현`,
             slug: `/about`,
           },
-        ],
-        externalLinks: [
-          {
-            name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
-          },
-          {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
-          },
-        ],
+        ]
       },
     },
     {
