@@ -28,7 +28,6 @@ const Header = () => {
         >
           <h1 sx={{ my: 0, fontWeight: `medium`, fontSize: [3, 4] }}>{siteTitle}</h1>
         </Link>
-        <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
       </Flex>
       <div
         sx={{
