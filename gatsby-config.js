@@ -7,7 +7,7 @@ module.exports = {
     siteTitle: `a30a`,
     siteTitleAlt: `a30a`,
     siteUrl: `https://a30a.dev`,
-    siteDescription: `Daehyun Paik's personal homepage.`,
+    siteDescription: `Yet another developer site`,
     siteLanguage: `kr`
   },
   plugins: [
@@ -23,7 +23,8 @@ module.exports = {
             title: `백대현`,
             slug: `/author`,
           },
-        ]
+        ],
+      formatString: `YYYY.MM.DD`
       },
     },
     {
