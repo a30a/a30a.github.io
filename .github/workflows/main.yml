@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - src
+name: Gatsby Publish
+
+jobs:
+  publish:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - uses: enriikke/gatsby-gh-pages-action@v2.1.1
+      with:
+        # A personal access token needed to push your site after it has been built.
+        access-token: ${{ secrets.ACCESS_TOKEN }}
+
