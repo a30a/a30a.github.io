@@ -16,6 +16,10 @@ module.exports = {
       options: {
         navigation: [
           {
+            title: `인용(책)`,
+            slug: `/blog`,
+          },
+          {
             title: `백대현`,
             slug: `/author`,
           },
