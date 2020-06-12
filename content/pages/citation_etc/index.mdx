@@ -1,0 +1,27 @@
+---
+slug: "/page_id=4"
+---
+
+To my knowledge, this is the first published paper to discuss arbitrary failures (later called Byzantine failures). It actually considered malicious behavior, not using such behavior simply as a metaphor for completely unpredictable failures. Its algorithm was the inspiration for the digital signature algorithm of [[41]](http://lamport.azurewebsites.net/pubs/pubs.html#reaching). With its use of real-time, this paper presaged the ideas in [[55]](http://lamport.azurewebsites.net/pubs/pubs.html#using-time).
+
+― Leslie Lamport, [My Writings: The Implementation of Reliable Distributed Multiprocess Systems](http://lamport.azurewebsites.net/pubs/pubs.html#implementation) (1978)
+
+---
+
+**What about the scalability of distributed systems?**
+
+All my distributed algorithms have a parameter N that represents the number of processes. These algorithms have costs, in time and messages that are functions of N. In most applications I’ve considered, the number of processes has been small enough that simplicity was more important than asymptotic costs. As people build systems with more and more processes, asymptotic costs become more important and people will devise new algorithms that reduce them.
+
+― [Milojicic, D.. (2002). A discussion with leslie lamport](https://www.microsoft.com/en-us/research/uploads/prod/2016/12/A-Discussion-With-Leslie-Lamport.pdf) (2002)
+
+---
+
+Before this paper, it was generally assumed that a three-processor system could tolerate one faulty processor. This paper shows that "Byzantine" faults, in which a faulty processor sends inconsistent information to the other processors, can defeat any traditional three-processor algorithm. (The term Byzantine didn't appear until [[46]](http://lamport.azurewebsites.net/pubs/pubs.html#byz).)
+
+― Leslie Lamport, [My Writings: Reaching Agreement in the Presence of Faults](http://lamport.azurewebsites.net/pubs/pubs.html#reaching) (1980)
+
+---
+
+I have long felt that, because it was posed as a cute problem about philosophers seated around a table, Dijkstra's dining philosopher's problem received much more attention than it deserves. (For example, it has probably received more attention in the theory community than the readers/writers problem, which illustrates the same principles and has much more practical importance.) I believed that the problem introduced in [[41]](http://lamport.azurewebsites.net/pubs/pubs.html#reaching) was very important and deserved the attention of computer scientists. The popularity of the dining philosophers problem taught me that the best way to attract attention to a problem is to present it in terms of a story.
+
+― Leslie Lamport, [My Writings: The Byzantine Generals Problem](http://lamport.azurewebsites.net/pubs/pubs.html#byz) (1982)

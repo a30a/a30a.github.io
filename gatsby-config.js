@@ -1,6 +1,6 @@
 require(`dotenv`).config({
   path: `.env`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -8,7 +8,7 @@ module.exports = {
     siteTitleAlt: `a30a`,
     siteUrl: `https://a30a.dev`,
     siteDescription: `Yet another developer site`,
-    siteLanguage: `kr`
+    siteLanguage: `kr`,
   },
   plugins: [
     {
@@ -20,18 +20,22 @@ module.exports = {
             slug: `/blog`,
           },
           {
+            title: `인용(기타)`,
+            slug: `/page_id=4`,
+          },
+          {
             title: `백대현`,
             slug: `/author`,
           },
         ],
-      formatString: `YYYY.MM.DD`
+        formatString: `YYYY.MM.DD`,
       },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-163947439-1`,
-        head: false
+        head: false,
       },
     },
     `gatsby-plugin-sitemap`,
@@ -50,4 +54,4 @@ module.exports = {
     `gatsby-plugin-netlify`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
   ],
-}
+};
