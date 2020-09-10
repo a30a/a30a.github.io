@@ -1,0 +1,43 @@
+---
+title: "«Readings in Database Systems, 5th Edition (2015)»"
+date: 2020-09-11
+slug: "/page_id=7"
+---
+
+#### 서지 사항
+
+Peter Bailis·Joseph M. Hellerstein·Michael Stonebraker, «Readings in Database Systems, Fifth Edition», 2015.
+
+http://www.redbook.io
+
+---
+
+> Readings in Database Systems (commonly known as the "Red Book") has offered readers an opinionated take on both classic and cutting-edge research in the field of data management since 1988.
+
+# 요약
+
+### Preface
+
+읽기 목록은 다음 핵심 범주에 부합하는 주제와 논문으로 선정하였다.
+
+첫째, 선택된 것들 각각은 데이터 관리에서 주요 트렌드를 드러내야한다.
+
+둘째, 선택된 것들은 표준적이거나 혹은 그에 준하는 것들이다. 우리는 각 항목에 대한 가장 대표적인 논문을 고르고자 했다.
+
+셋째, 선택된 것들은 1차 문헌이어야 한다. 훌륭한 해설서들이 많이 있지만, 1차 문헌을 읽음으로써만 얻을 수 있는 역사적 맥락과 영향력 있는 솔루션을 빚게한 생각에 노출될 수 있다.
+
+넷째, 이 모음집은 저자들이 "가장 중요하다고" 생각하는 것들을 담고 있다. 독자들은 비판적인 시각으로 읽어주길 바란다.
+
+# 인용
+
+### Chapter 1: Background
+
+Introduced by Michael Stonebraker
+
+> A decade ago, the buzz was all XML. Vendors were intent on adding XML to their relational engines. Industry analysts (and more than a few researchers) were touting XML as “the next big thing”.
+
+> In summary, JSON is a reasonable choice for sparse data. In this context, I expect it to have a fair amount of “legs”. On the other hand, it is a disaster in the making as a general hierarchical data format. I fully expect RDBMSs to subsume JSON as merely a data type (among many) in their systems. In other words, it is a reasonable way to encode spare relational data.
+
+> More recently, there has been another thrust in HDFS land which merit discussion, namely “data lakes”. A reasonable use of an HDFS cluster (which by now most enterprises have invested in and want to find something useful for them to do) is as a queue of data files which have been ingested.
+
+> However, the basic architecture of these new systems continues to follow the parsing/optimizer/executor structure described in the paper. Also, the threading model and process structure is as relevant today as a decade ago. As such, the reader should note that the details of concurrency control, crash recovery, optimization, data structures and indexing are in a state of rapid change, but the basic architecture of DBMSs remains intact.
