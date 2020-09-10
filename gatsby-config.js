@@ -16,7 +16,7 @@ module.exports = {
       options: {
         navigation: [
           {
-            title: `인용(책)`,
+            title: `인용·요약`,
             slug: `/blog`,
           },
           {
