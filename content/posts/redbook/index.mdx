@@ -1,20 +1,18 @@
 ---
 title: "«Readings in Database Systems, 5th Edition (2015)»"
-date: 2020-09-11
+date: 2020-09-12
 slug: "/page_id=7"
 ---
 
-#### 서지 사항
+**서지 사항**
 
-Peter Bailis·Joseph M. Hellerstein·Michael Stonebraker, «Readings in Database Systems, Fifth Edition», 2015.
-
-http://www.redbook.io
+[Peter Bailis·Joseph M. Hellerstein·Michael Stonebraker, «Readings in Database Systems, Fifth Edition», 2015.](http://www.redbook.io)
 
 ---
 
 > Readings in Database Systems (commonly known as the "Red Book") has offered readers an opinionated take on both classic and cutting-edge research in the field of data management since 1988.
 
-# 요약
+## 요약
 
 ### Preface
 
@@ -28,7 +26,26 @@ http://www.redbook.io
 
 넷째, 이 모음집은 저자들이 "가장 중요하다고" 생각하는 것들을 담고 있다. 독자들은 비판적인 시각으로 읽어주길 바란다.
 
-# 인용
+### Chapter 1: Background
+
+불과 10년전에 씌여진 data model 논문에서 아무도 배운 게 없어 보인다는 점이 놀랍다.
+
+10년 전에는 XML이 장안의 화제였다. 벤더들은 자기들의 relational engine에 XML을 올리고자 했다. 산업 분석가들은 XML이 "the next big thing" 이라며 성가시게 했다. 10년이 지난 후 XML은 니치한 제품이 되었고, 필드는 다른 곳으로 옮겨갔다. 내 생각에, XML은 다음의 문제들을 극복하지 못했다고 본다:
+
+- (아무도 이해할 수 없는) 과도한 복잡도
+- 널리 받아들여질만큼 압도적인 use case의 부재
+
+이러한 사례가 바퀴를 재발명하는 일을 막지는 못한다. 지금은 JSON이 그러한데, 다음 세가지 중 하나로 볼 수 있다:
+
+- 범용 계층적 데이터 포맷. 이게 좋은 아이디어라고 생각하는 사람은 IMS의 데이터 모델 논문 섹션을 보라.
+- A representation for sparse data. This is disasterous for disk-based row stores but works fine in column stores. In the former case, JSON is a reasonable encoding format for the “hobbies” column, and
+  several RDBMSs have recently added support for a JSON data type.
+
+또 다른 예는 구글이 웹 크롤을 위한 목적으로 개발한 Map-Reduce가 있다. 수년 후 구글은 자신들의 어플리케이션에 Map-Reduce 사용을 멈추고 Big Table로 옮겨갔다. Map-Reduce는 넓게 확장하여 적용할 수 있는 아키텍처가 아니다. 시장은 Map-Reduce에서 HDFS로 바꼈다.
+
+당대에 널리 화제가 되는 데이터 모델들은 나중에 한계가 밝혀진다. 이러한 일이 반복된다. 시장은 과거에서 배우는 게 아무 것도 없어보인다.
+
+## 인용
 
 ### Chapter 1: Background
 
@@ -40,4 +57,54 @@ Introduced by Michael Stonebraker
 
 > More recently, there has been another thrust in HDFS land which merit discussion, namely “data lakes”. A reasonable use of an HDFS cluster (which by now most enterprises have invested in and want to find something useful for them to do) is as a queue of data files which have been ingested.
 
+> In summary, in the last decade nobody seems to have heeded the lessons in “comes around”. New data models have been invented, only to morph into SQL on tables.
+
 > However, the basic architecture of these new systems continues to follow the parsing/optimizer/executor structure described in the paper. Also, the threading model and process structure is as relevant today as a decade ago. As such, the reader should note that the details of concurrency control, crash recovery, optimization, data structures and indexing are in a state of rapid change, but the basic architecture of DBMSs remains intact.
+
+### Chapter 2: Traditional RDBMS Systems
+
+Introduced by Michael Stonebraker
+
+Selected Readings:
+
+Morton M. Astrahan, Mike W. Blasgen, Donald D. Chamberlin, Kapali P. Eswaran, Jim Gray, Patricia P. Griffiths, W. Frank King III, Raymond A. Lorie, Paul R. McJones, James W. Mehl, Gianfranco R. Putzolu, Irving L. Traiger, Bradford W. Wade, Vera Watson. System R: Relational Approach to Database Management. ACM Transactions on Database Systems, 1(2), 1976, 97-137.
+
+Michael Stonebraker and Lawrence A. Rowe. The design of POSTGRES. SIGMOD, 1986.
+
+David J. DeWitt, Shahram Ghandeharizadeh, Donovan Schneider, Allan Bricker, Hui-I Hsiao, Rick Rasmussen. The Gamma Database Machine Project. IEEE Transactions on Knowledge and Data Engineering, 2(1), 1990, 44-62.
+
+> The System R project started under the direction of Frank King at IBM Research probably around 1972. By then Ted Codd’s pioneering paper was 18 months old, and it was obvi- ous to a lot of people that one should build a prototype to test out his ideas.
+
+> All the annoying features of the language have endured to this day. SQL will be the COBOL of 2020, a language we are stuck with that everybody will complain about.
+
+> My second biggest complaint is that System R used a subroutine call interface (now ODBC) to couple a client ap- plication to the DBMS. I consider ODBC among the worst interfaces on the planet. To issue a single query, one has to open a data base, open a cursor, bind it to a query and then issue individual fetches for data records. It takes a page of fairly inscrutable code just to run one query.
+
+> The second paper concerns Postgres. This project started in 1984 when it was obvious that continuing to prototype using the academic Ingres code base made no sense.
+
+> However, in my opinion the important legacy of Post- gres is its abstract data type (ADT) system. User-defined types and functions have been added to most mainstream relational DBMSs, using the Postgres model.
+
+> Besides the ADT system and open source distribution model, a key legacy of the Postgres project was a genera- tion of highly trained DBMS implementers, who have gone on to be instrumental in building several other commercial systems
+
+> Essentially all data warehouse systems use a Gamma- style architecture. Any thought of using a shared disk or shared memory system have all but disappeared.
+
+### Chapter 3: Techniques Everyone Should Know
+
+Introduced by Peter Bailis
+
+Selected Readings:
+
+Patricia G. Selinger, Morton M. Astrahan, Donald D. Chamberlin, Raymond A. Lorie, Thomas G. Price. Access path selection in a relational database management system. SIGMOD, 1979.
+
+C. Mohan, Donald J. Haderle, Bruce G. Lindsay, Hamid Pirahesh, Peter M. Schwarz. ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging. ACM Transactions on Database Systems, 17(1), 1992, 94-162.
+
+Jim Gray, Raymond A. Lorie, Gianfranco R. Putzolu, Irving L. Traiger. Granularity of Locks and Degrees of Consistency in a Shared Data Base. , IBM, September, 1975.
+
+Rakesh Agrawal, Michael J. Carey, Miron Livny. Concurrency Control Performance Modeling: Alternatives and Implica- tions. ACM Transactions on Database Systems, 12(4), 1987, 609-654.
+
+C. Mohan, Bruce G. Lindsay, Ron Obermarck. Transaction Management in the R\* Distributed Database Management System. ACM Transactions on Database Systems, 11(4), 1986, 378-396.
+
+> In this chapter, we present primary and near-primary sources for several of the most important core concepts in database system design: query planning, concurrency con- trol, database recovery, and distribution.
+
+> this chapter focuses on broadly applicable techniques and algorithms rather than whole systems.
+
+> Query optimization is important in relational database architecture because it is core to enabling data-independent query processing.
