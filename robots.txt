@@ -1,0 +1,3 @@
+User-agent: *
+
+sitemap: https://a30a.dev/sitemap.xml
